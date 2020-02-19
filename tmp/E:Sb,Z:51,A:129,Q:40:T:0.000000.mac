@@ -1,7 +1,0 @@
-/pga/selectGunAction 1
-/gps/particle ion
-/gps/ion 51 129 40
-/gps/position 0 0 0
-/gps/ene/mono 0
-/histo/filename E:Sb,Z:51,A:129,Q:40:T:0.000000
-/run/beamOn 20000
