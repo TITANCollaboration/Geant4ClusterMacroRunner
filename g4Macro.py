@@ -26,7 +26,7 @@ class G4MacroRun:
         self.g4id = g4id
 
 
-def read_in_geant4_macro_file(g4_macro_filename):
+def read_in_geant4_macro_file(g4_macro_filename, work_dir):
     list_of_macro_objects = []
     macro_line_buffer = ""
     macro_header = ""
@@ -39,7 +39,12 @@ def read_in_geant4_macro_file(g4_macro_filename):
                 macro_header = g4_file_line
             elif '# END' in g4_file_line:
                 # WRITE OBJECT
-                list_of_macro_objects.append(G4MacroRun(macro_header.rstrip()[9:], macro_block, g4id, 0))
+                unique_part_of_header = macro_header.rstrip()[9:]
+                full_path_to_root_file = work_dir + '/' + unique_part_of_header + '.root'
+                if not os.path.isfile(full_path_to_root_file):
+                    list_of_macro_objects.append(G4MacroRun(unique_part_of_header, macro_block, g4id, 0))
+                else:
+                    print("Root file : %s already exists, skipping" % (full_path_to_root_file))
                 g4id = g4id + 1
                 macro_block = ""  # Setup for next block
             else:

@@ -18,13 +18,12 @@ from runSystems import Systems
 from runSystems import process_event_loop
 
 
-def initMacroMachine(system_objects):
+def initMacroMachine(system_objects, work_dir, g4_macro_filename):
     # This kicks off the entire process after any config file or command line argument stuff has happened
-    print("We're starting!")
     for system in system_objects:
-        print("My hostname: %s" % system.hostname)
-    g4_macro_object_list = g4Macro.read_in_geant4_macro_file('geant4macro.mac')  # Change this to read from command line..
-    process_event_loop(system_objects, g4_macro_object_list)
+        print("Available System: %s" % system.hostname)
+    g4_macro_object_list = g4Macro.read_in_geant4_macro_file(g4_macro_filename, work_dir)  # Change this to read from command line..
+    process_event_loop(system_objects, g4_macro_object_list, work_dir)
     return 0
 
 
@@ -57,6 +56,9 @@ def processConfigFile(configFileName):
         config.read(configFileName)
 
         systems_parameter_list = tuple(getConfigEntry(config, 'Run', 'systemsList', reqd=True, remove_spaces=True).split(","))
+        work_dir = getConfigEntry(config, 'Run', 'work_dir', reqd=True, remove_spaces=True)
+        g4_macro_filename = getConfigEntry(config, 'Run', 'g4_macro_filename', reqd=True, remove_spaces=True)
+
         system_objects = []
         for my_system in systems_parameter_list:
             # Read in Beam information
@@ -69,7 +71,7 @@ def processConfigFile(configFileName):
 
             system_objects.append(Systems(hostname, username, is_local, thread_count, tmp_dir, ssh_port))
 
-        initMacroMachine(system_objects)
+        initMacroMachine(system_objects, work_dir, g4_macro_filename)
 
 
 def main():
