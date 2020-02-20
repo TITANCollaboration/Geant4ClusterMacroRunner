@@ -1,4 +1,11 @@
 #!/bin/bash
+# $1 = username
+# $2 = hostname
+# $3 = ssh port
+# $4 = remote tmp directory
+# $5 = base name for root and macro files
+# $6 = local tmp directory to store all the macros, root files, and logs
+
 #  This is for executing the g4 macros on remote systems where ssh will need to be employed
 
 # Make sure the tmp directory exists on the remote host
