@@ -7,8 +7,8 @@ My goal was to write a small piece of flexible software that could accept a larg
 * Step 1:
   * Run EBIT Charge Breeding Simulator
   * This outputs a single file containing many macro definitions with headers and footers such as :
-  ```
-  # START: E:Sb,Z:51,A:129,Q:41:T:0.800002
+```
+# START: E:Sb,Z:51,A:129,Q:41:T:0.800002
 /pga/selectGunAction 1
 /gps/particle ion
 /gps/ion 51 129 41
