@@ -27,3 +27,5 @@ My goal was to write a small piece of flexible software that could accept a larg
 /run/beamOn 111147
 # END
 ```
+  * Typically there will be a large number of these entries.  
+  * I simplify my life by having the header (everything past # START) be the same as my filenames I will use throughout with just different file extensions
