@@ -1,6 +1,6 @@
 # Geant4ClusterMacroRunner
 
-![alt text]("https://github.com/TITANCollaboration/Geant4ClusterMacroRunner/blob/master/images/simulationstack.png "Simulation Stack")
+![alt text]("https://github.com/TITANCollaboration/Geant4ClusterMacroRunner/blob/master/images/simulationstack.png" "Simulation Stack")
 
 This piece of software was initially intended to tie together the [EBIT Charge Breeding Simulator](https://github.com/TITANCollaboration/ebitsim) and [EBIT 8pi GEANT4 Simulator](https://github.com/TITANCollaboration/decayspec_8pi_geant4sim) software packages.  But it might be useful for more than that so lets go through a little bit of how it works and how I run it.
 
