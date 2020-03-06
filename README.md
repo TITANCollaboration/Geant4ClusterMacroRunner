@@ -1,5 +1,7 @@
 # Geant4ClusterMacroRunner
 
+![alt text]("https://github.com/TITANCollaboration/Geant4ClusterMacroRunner/blob/master/images/simulationstack.png "Simulation Stack")
+
 This piece of software was initially intended to tie together the [EBIT Charge Breeding Simulator](https://github.com/TITANCollaboration/ebitsim) and [EBIT 8pi GEANT4 Simulator](https://github.com/TITANCollaboration/decayspec_8pi_geant4sim) software packages.  But it might be useful for more than that so lets go through a little bit of how it works and how I run it.
 
 My goal was to write a small piece of flexible software that could accept a large number of GEANT4 macros and run them on various systems that I have access to and then have the output data (in this case ROOT files) available to me in a single location.  The GEANT4 simulations I am running are all single threaded so I want to be able to launch as many instances of the simulation as cores I have available across multiple computer systems.
