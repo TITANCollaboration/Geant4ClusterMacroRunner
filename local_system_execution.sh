@@ -8,7 +8,7 @@
 #  This file is for locally running the GEANT4 macro, should be a bit simpler?  Maybe we'll never use it..
 #
 
-
+mkdir -p $HOME/$4
 # Copy over the macro file to remote host into tmp dir
 cp $6/$5.mac $HOME/$4
 
